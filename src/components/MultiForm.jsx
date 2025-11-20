@@ -1,0 +1,69 @@
+import { useState } from "react";
+function MultiForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+  console.log(' Event target:', e.target);
+  console.log(' Field name:', e.target.name);
+  console.log(' Field value:', e.target.value);
+  
+  const { name, value } = e.target;
+  setFormData({ ...formData, [name]: value });
+  
+  console.log(' Updated formData:', { ...formData, [name]: value });
+};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Data Submitted: ", formData);
+  };
+
+  return (
+    <div style={{ padding: '20px', maxWidth: '400px', margin: 'auto' }}>
+      <h2>Multi Form</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            placeholder="Name"
+            onChange={handleChange}
+            style={{ display: 'block', margin: '5px', padding: '8px' }}
+          />
+        </label>
+        <br />
+        <label htmlFor="">
+          Email:
+          <input
+            type="email"
+            name="email"
+            placeholder="email"
+            value={formData.email}
+            onChange={handleChange}
+          style={{ display: 'block', margin: '5px', padding: '8px' }}
+          />
+        </label>
+        <br />
+        <label htmlFor="">
+          password:
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            value={formData.password}
+            onChange={handleChange}
+          style={{ display: 'block', margin: '5px', padding: '8px' }}
+          />
+        </label>
+        <br />
+        <button type="submit" style={{ padding: '10px 20px' }}>Submit</button>
+      </form>
+    </div>
+  );
+}
+export default MultiForm;
