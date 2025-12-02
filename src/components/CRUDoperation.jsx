@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 function CRUDoperations(params) {
   const [task, setTask] = useState([]);
-    const [taskInput, setTaskInput] = useState("");
+  const [taskInput, setTaskInput] = useState("");
   
     useEffect(() => {
       console.log("🔄 Tasks updated:", task);
