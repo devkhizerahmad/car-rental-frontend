@@ -16,11 +16,29 @@ import LoginWithGoogle from './components/LoginWithGoogle';
 import DigitalClock from './components/AnalogClock';
 import ShoppingCart from './components/ShoppingCart';
 import QuizApp from './components/Quiz';
+import MasterHooksProject from './components/PracticeHooksProject';
+import PracticeHooks from './components/PracticeHooks';
+import NotesPractice from './components/NotesPractice';
+import { UserContext } from './components/contextProvider/context/UserContext';
+import Child from './components/contextProvider/Child';
+import PasswordApp from './components/passwordGenerator/PasswordApp';
+
+
 
 function App() {
+  const user = { name: "Ali" };
+
   return (
     <>
      <h3>Welcome to Car Rental App</h3>
+     <UserContext.Provider value={user}>
+
+      <Child />
+
+     </UserContext.Provider>
+     
+     <NotesPractice/>
+     <PasswordApp />
     </>
     // <Router>
     //   <Navbar />
