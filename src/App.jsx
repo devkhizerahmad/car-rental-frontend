@@ -22,6 +22,9 @@ import NotesPractice from './components/NotesPractice';
 import { UserContext } from './components/contextProvider/context/UserContext';
 import Child from './components/contextProvider/Child';
 import PasswordApp from './components/passwordGenerator/PasswordApp';
+import CurrencyApp from './components/currencyConverter/CurrencyApp';
+
+
 
 
 
@@ -31,14 +34,16 @@ function App() {
   return (
     <>
      <h3>Welcome to Car Rental App</h3>
-     <UserContext.Provider value={user}>
+     {/* <UserContext.Provider value={user}>
 
       <Child />
 
      </UserContext.Provider>
      
      <NotesPractice/>
-     <PasswordApp />
+     <PasswordApp /> */}
+     <CurrencyApp/>
+     
     </>
     // <Router>
     //   <Navbar />
