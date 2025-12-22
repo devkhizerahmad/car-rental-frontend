@@ -10,6 +10,9 @@ import Home from "./components/RoutingDom/Home/Home.jsx";
 import About from "./components/RoutingDom/About/About.jsx";
 import Contact from "./components/RoutingDom/ContactUS/ContactUs.jsx";
 import User from "./components/RoutingDom/User/User.jsx";
+import { Provider } from "react-redux";
+import { store } from "./components/ReduxToolkit/app/store.js";
+
 
 
 // const router = createBrowserRouter([
@@ -48,11 +51,14 @@ const router = createBrowserRouter(
   )
 )
 createRoot(document.getElementById("root")).render(
-  <ThemeProvider>
-    {/* <RouterProvider router={router} /> */}
-    <StrictMode>
-      <App />
-    </StrictMode>
+  // <ThemeProvider>
+  //   {/* <RouterProvider router={router} /> */}
+  //   <StrictMode>
+  //     <App />
+  //   </StrictMode>
 
-  </ThemeProvider>  
+  // </ThemeProvider>  
+  <Provider store={store}>
+    <App/>
+  </Provider>
 );

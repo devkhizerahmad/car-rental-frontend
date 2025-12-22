@@ -24,19 +24,23 @@ import CurrencyApp from "./components/currencyConverter/CurrencyApp";
 import UserContextProvider from "./context/UserContextProvider";
 import TestAcontext from "./components/TestAcontext";
 import TestBcontext from "./components/TestBcontext";
-import Todos from "./components/Todos";
+// import Todos from "./components/Todos";
+import AddTodo from "./components/ReduxToolkit/componentsRedux/AddTodo";
+ import Todos from "./components/ReduxToolkit/componentsRedux/Todos.jsx";
 
 function App() {
 
   return (
     <>
       <h3>Welcome to Car Rental App</h3>
+      <AddTodo/>
+      <Todos/>
       {/* <UserContextProvider>
         <TestAcontext />
         <TestBcontext />
         
       </UserContextProvider> */}
-        <Todos />
+        {/* <Todos /> */}
     </>
     // <Router>
     //   <Navbar />
