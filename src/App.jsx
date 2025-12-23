@@ -27,6 +27,7 @@ import TestBcontext from "./components/TestBcontext";
 // import Todos from "./components/Todos";
 import AddTodo from "./components/ReduxToolkit/componentsRedux/AddTodo";
  import Todos from "./components/ReduxToolkit/componentsRedux/Todos.jsx";
+import AppWrite from "./components/AppWrite/AppWrite.jsx";
 
 function App() {
 
@@ -35,6 +36,8 @@ function App() {
       <h3>Welcome to Car Rental App</h3>
       <AddTodo/>
       <Todos/>
+      <AppWrite/>
+
       {/* <UserContextProvider>
         <TestAcontext />
         <TestBcontext />
