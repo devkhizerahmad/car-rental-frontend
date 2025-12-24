@@ -1,6 +1,5 @@
 import config from "../../config/config";
 import { Client, Account, ID} from "appwrite";
-import UserContext from "../../context/UserContext";
 
 export class AuthService {
   client = new Client();
