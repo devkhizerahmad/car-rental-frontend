@@ -27,7 +27,7 @@ export class Service {
           featuredImage,
           status,
           userId,
-        },
+        }
       );
       console.log("post :", post);
 
@@ -35,11 +35,10 @@ export class Service {
     } catch (error) {
       console.error("Create post error:", error);
       throw new Error("Error :", error.message);
-
     }
   }
 
-  async updatePost(slug, {title, slug, content, featuredImage, status}) {
+  async updatePost(slug, { title, slug, content, featuredImage, status }) {
     try {
       const updatedPost = await this.database.updateDocument(
         config.appwriteDatabaseId,
@@ -49,7 +48,7 @@ export class Service {
           title,
           content,
           featuredImage,
-          status
+          status,
         }
       );
       console.log("updatedPost :", updatedPost);
@@ -57,7 +56,7 @@ export class Service {
       return updatedPost;
     } catch (error) {
       console.error("Update post error:", error);
-      throw new Error("Error :", error.message);      
+      throw new Error("Error :", error.message);
     }
   }
 
@@ -84,12 +83,54 @@ export class Service {
       return post;
     } catch (error) {
       console.error("Get post error:", error);
-      return null;
+      return false;
     }
+  }
+  async getPosts(queries = [Query.equal("status", "active")]) {
+    try {
+      const posts = await this.database.listDocuments(
+        config.appwriteDatabaseId,
+        config.appwriteCollectionId,
+        queries
+      );
+      return posts.documents;
+    } catch (error) {
+      console.error("Get posts error:", error);
+      return false;
+    }
+  }
+
+  //file upload service
+  async uploadFile(file) {
+    try {
+      const uploadedFile = await this.storage.createFile(
+        config.appwriteBucketId,
+        ID.unique(),
+        file
+      );
+      return uploadedFile;
+    } catch (error) {
+      console.error("File upload error:", error);
+      throw new Error("Error :", error.message);
+    }
+  }
+  async deleteFile(fileId) {
+    try {
+      await this.storage.deleteFile(config.appwriteBucketId, fileId);
+      return true;
+    } catch (error) {
+      console.error("File delete error:", error);
+      return false;
+    }
+  }
+  getFilePreviewURL(fileId) {
+    return this.storage.getFilePreview(
+      config.appwriteBucketId,
+      fileId
+    );
   }
 }
 
-
 const service = new Service();
 
-export default Service;
+export default service;
