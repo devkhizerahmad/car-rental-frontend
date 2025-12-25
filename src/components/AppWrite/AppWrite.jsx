@@ -1,12 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import authService from "./auth.service";
+import { login, logout } from "./store/authSlice";
+import Header from "./appWiteComponents/Header/Header";
+import Footer from "./appWiteComponents/footer/Footer";
 
 function AppWrite() {
+  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
 
-  console.log("ENV file :",
-    import.meta.env.VITE_APPWRITE_URL)
-  return (
-    <div>AppWrite</div>
-  )
+  useEffect(() => {
+    authService
+      .getCurrentUser()
+      .then((user) => {
+        if (user) {
+          dispatch(login({ userData: user }));
+        } else {
+          dispatch(logout());
+        }
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  return !loading ? (
+    <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
+      <div className="w-full block" >
+        <Header/>
+        <main>
+          TODO: {/* <Outlet/> */}
+        </main>
+        <Footer/>
+      </div>
+    </div>
+  ) : null;
 }
 
-export default AppWrite
+export default AppWrite;

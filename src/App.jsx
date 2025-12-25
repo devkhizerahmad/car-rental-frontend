@@ -34,8 +34,8 @@ function App() {
   return (
     <>
       <h3>Welcome to Car Rental App</h3>
-      <AddTodo/>
-      <Todos/>
+      {/* <AddTodo/>
+      <Todos/> */}
       <AppWrite/>
 
       {/* <UserContextProvider>

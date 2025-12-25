@@ -4,16 +4,20 @@ import "./index.css";
 import App from "./App.jsx";
 import Navbar from "./components/Navbar.jsx";
 import { ThemeProvider } from "./components/ThemeContext.jsx";
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 import Layout from "./components/RoutingDom/Layout.jsx";
 import Home from "./components/RoutingDom/Home/Home.jsx";
 import About from "./components/RoutingDom/About/About.jsx";
 import Contact from "./components/RoutingDom/ContactUS/ContactUs.jsx";
 import User from "./components/RoutingDom/User/User.jsx";
 import { Provider } from "react-redux";
-import { store } from "./components/ReduxToolkit/app/store.js";
-
-
+import store from "./components/AppWrite/store/store.js";
+// import { store } from "./components/ReduxToolkit/app/store.js";
 
 // const router = createBrowserRouter([
 //   {
@@ -42,14 +46,10 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
-      <Route 
-      path="user/:userid" 
-      element={<User/>} 
-      loader={() => { }}
-      />
+      <Route path="user/:userid" element={<User />} loader={() => {}} />
     </Route>
   )
-)
+);
 createRoot(document.getElementById("root")).render(
   // <ThemeProvider>
   //   {/* <RouterProvider router={router} /> */}
@@ -57,8 +57,10 @@ createRoot(document.getElementById("root")).render(
   //     <App />
   //   </StrictMode>
 
-  // </ThemeProvider>  
-  <Provider store={store}>
-    <App/>
-  </Provider>
+  // </ThemeProvider>
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
 );
