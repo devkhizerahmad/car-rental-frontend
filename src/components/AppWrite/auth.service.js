@@ -38,12 +38,11 @@ export class AuthService {
   }async getCurrentUser() {
     try {
       const users = await this.account.get()
+      console.log("current user :", users)
       return users;
     } catch (error) {
-      throw new Error("Error :", error.message);
+      throw new Error("getCurrent User :", error.message);
     }
-    return null;
-
   }
   async logout() {
     try {
