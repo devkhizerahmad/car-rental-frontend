@@ -2,8 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
-import Navbar from "./components/Navbar.jsx";
-import { ThemeProvider } from "./components/ThemeContext.jsx";
+import Navbar from "./components/Practice/Navbar.jsx";
+import { ThemeProvider } from "./components/Practice/ThemeContext.jsx";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -17,6 +17,7 @@ import Contact from "./components/RoutingDom/ContactUS/ContactUs.jsx";
 import User from "./components/RoutingDom/User/User.jsx";
 import { Provider } from "react-redux";
 import store from "./components/AppWrite/store/store.js";
+import React from "react";
 // import { store } from "./components/ReduxToolkit/app/store.js";
 
 // const router = createBrowserRouter([
@@ -58,6 +59,7 @@ createRoot(document.getElementById("root")).render(
   //   </StrictMode>
 
   // </ThemeProvider>
+
   <React.StrictMode>
     <Provider store={store}>
       <App />

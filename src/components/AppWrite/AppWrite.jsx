@@ -4,6 +4,7 @@ import authService from "./auth.service";
 import { login, logout } from "./store/authSlice";
 import Header from "./appWiteComponents/Header/Header";
 import Footer from "./appWiteComponents/footer/Footer";
+import { Outlet } from "react-router-dom";
 
 function AppWrite() {
   const [loading, setLoading] = useState(true);
@@ -27,7 +28,7 @@ function AppWrite() {
       <div className="w-full block" >
         <Header/>
         <main>
-          TODO: {/* <Outlet/> */}
+         <Outlet/> 
         </main>
         <Footer/>
       </div>
