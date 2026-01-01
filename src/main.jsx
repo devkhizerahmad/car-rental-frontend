@@ -65,5 +65,10 @@ createRoot(document.getElementById("root")).render(
   //     <App />
   //   </Provider>
   // </React.StrictMode>
-  <reac
+  <ThemeProvider>
+
+  <StrictMode>
+    <App />
+  </StrictMode>
+  </ThemeProvider>
 );
