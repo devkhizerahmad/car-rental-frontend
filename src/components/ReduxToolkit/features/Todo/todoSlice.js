@@ -34,7 +34,7 @@ const todoSlice = createSlice({
       state.todos.push(newTodo);
     },
 
-    // Remove a todo by id.
+    // Remove a todo by id
     // Accepts either a raw id payload or an object { id }.
     removeTodo: (state, action) => {
       // Debug logging to trace removal operations
