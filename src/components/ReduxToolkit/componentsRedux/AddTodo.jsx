@@ -9,6 +9,7 @@ function AddTodo() {
 
   const addTodoHandler = (e) => {
     e.preventDefault();
+    //use reducer function
     dispatch(addTodo(inputValue))
     setInputValue("");
   }
