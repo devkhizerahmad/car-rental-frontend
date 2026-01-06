@@ -3,6 +3,7 @@ import { removeTodo } from '../features/Todo/todoSlice';
 
 function Todos() {
   const todos = useSelector((state) => state.todos);
+  //getting the dispatch function from redux store 
   const dispatch = useDispatch();
   console.log("todos dispatch :", todos, "dispatch :", dispatch)
   return (
