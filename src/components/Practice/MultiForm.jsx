@@ -16,6 +16,7 @@ function MultiForm() {
   
   console.log(' Updated formData:', { ...formData, [name]: value });
 };
+// Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data Submitted: ", formData);
