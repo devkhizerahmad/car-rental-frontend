@@ -55,10 +55,10 @@ function MultiForm() {
           <input
             type="password"
             name="password"
-            placeholder="password"
+            placeholder="Enter your password"
             value={formData.password}
             onChange={handleChange}
-          style={{ display: 'block', margin: '5px', padding: '8px' }}
+          style={{ display: 'block', margin: '5px', padding: '8px', width: '100%' }}
           />
         </label>
         <br />
