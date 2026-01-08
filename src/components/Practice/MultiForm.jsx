@@ -43,7 +43,7 @@ function MultiForm() {
           <input
             type="email"
             name="email"
-            placeholder="email"
+            placeholder="Enter your email"
             value={formData.email}
             onChange={handleChange}
           style={{ display: 'block', margin: '5px', padding: '8px', width: '100%' }}
