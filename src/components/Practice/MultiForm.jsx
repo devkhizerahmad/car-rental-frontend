@@ -6,7 +6,7 @@ function MultiForm() {
     email: "",
     password: "",
   });
-
+// Handle input changes for all form fields
   const handleChange = (e) => {
   console.log(' Event target:', e.target);
   console.log(' Field name:', e.target.name);
