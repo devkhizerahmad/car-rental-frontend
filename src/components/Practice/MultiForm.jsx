@@ -34,7 +34,7 @@ function MultiForm() {
             value={formData.name}
             placeholder="Name"
             onChange={handleChange}
-            style={{ display: 'block', margin: '5px', padding: '8px' }}
+            style={{ display: 'block', margin: '5px', padding: '8px', width: '100%' }}
           />
         </label>
         <br />
