@@ -10,7 +10,7 @@ function MultiForm() {
   console.log(' Event target:', e.target);
   console.log(' Field name:', e.target.name);
   console.log(' Field value:', e.target.value);
-  
+  // Destructure name and value from the event target
   const { name, value } = e.target;
   setFormData({ ...formData, [name]: value });
   
