@@ -62,7 +62,7 @@ function MultiForm() {
           />
         </label>
         <br />
-        <button type="submit" style={{ padding: '10px 20px' }}>Submit</button>
+        <button type="submit" style={{ padding: '10px 20px', width: '100%' }}>Submit</button>
       </form>
     </div>
   );
