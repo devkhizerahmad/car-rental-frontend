@@ -32,7 +32,7 @@ function MultiForm() {
             type="text"
             name="name"
             value={formData.name}
-            placeholder="Name"
+            placeholder="Enter your name"
             onChange={handleChange}
             style={{ display: 'block', margin: '5px', padding: '8px', width: '100%' }}
           />
